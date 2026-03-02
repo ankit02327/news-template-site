@@ -23,10 +23,11 @@ SECURE_SSL_REDIRECT = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_REFERRER_POLICY = "no-referrer-when-downgrade"
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
+
 
 import os
 
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 ALLOWED_HOSTS = [
     host.strip()
     for host in os.environ.get("ALLOWED_HOSTS", "").split(",")
