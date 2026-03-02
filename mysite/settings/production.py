@@ -28,12 +28,6 @@ SECURE_REFERRER_POLICY = "no-referrer-when-downgrade"
 import os
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-ALLOWED_HOSTS = [
-    host.strip()
-    for host in os.environ.get("ALLOWED_HOSTS", "").split(",")
-    if host.strip()
-]
+ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = [
-    f"https://{host}" for host in ALLOWED_HOSTS
-]
+CSRF_TRUSTED_ORIGINS = ["https://news-template-site.onrender.com"]
