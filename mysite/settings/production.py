@@ -1,4 +1,7 @@
-from .base import *  # noqa
+from .base import *
+import os
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = False
 
@@ -25,7 +28,7 @@ SECURE_REFERRER_POLICY = "no-referrer-when-downgrade"
 
 
 
-import os
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 ALLOWED_HOSTS = ["*"]
